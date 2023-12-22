@@ -1,6 +1,7 @@
-// import { useContext } from 'react';
-// import { ThemeContext } from '../../utils/context';
 import styled from 'styled-components';
+
+// _____________________________________________________
+// Using styled-components library: 
 
 const FooterContainer = styled.footer`
    display: flex;
@@ -24,6 +25,7 @@ const NightModeButton = styled.button`
    &:hover {
     background-color: #7cc6fe;
 `;
+// _____________________________________________________
 
 const Footer = () => {
     return (

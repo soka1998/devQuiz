@@ -3,6 +3,10 @@ import '../styles/Quiz.css'
 import { quizFullStackData, quizFrontendData, quizBackendData } from '../data/data'
 import { useParams } from 'react-router-dom';
 
+// _____________________________________________________
+
+// Here i want to add loader component :
+
 // import styled from 'styled-components';
 // const LoaderWrapper = styled.div`
 //    display: flex;
@@ -28,9 +32,9 @@ import { useParams } from 'react-router-dom';
 //     transform: rotate(360deg);
 //   }
 // `;
+// _____________________________________________________
 
-// export default function Quiz({ selectedCategory = 'Frontend' }) {
-export default function Quiz() {
+const Quiz = ()=> {
 
     // Retrieve the stored JSON string from localStorage
     const userDataString = localStorage.getItem('formData');
@@ -44,12 +48,12 @@ export default function Quiz() {
         const firstName = userData.firstName;
         // console.log(firstName);
     // } else {
-        // console.log('No user data found in localStorage');
+        // console.log('No user data found in localStorage :(');
     // }
 
 
 
-    // ...
+    // To get the category selected from URL Params
     const { selectedCategory } = useParams();
     // Log selectedCategory only if it exists
     useEffect(() => {
@@ -58,16 +62,16 @@ export default function Quiz() {
         }
     }, [selectedCategory]);
 
-    // ...
+    // _____________________________________________________
 
-
-    const questionTimeLimit = 59 // 5 secondes
+    const questionTimeLimit = 59 // 5 secs
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     const [timer, setTimer] = useState(questionTimeLimit); // : to store time limit
-    const [timerProgress, setTimerProgress] = useState(100); // : Initialisé à 100%
+    const [timerProgress, setTimerProgress] = useState(100); // : Initialize to 100%
 
+    // _____________________________________________________
 
     // Choose questions based on the selected category
     const questions = selectedCategory === 'Fullstack'
@@ -78,6 +82,7 @@ export default function Quiz() {
                 ? quizBackendData
                 : [];
 
+    // _____________________________________________________
 
     // To rerender component
     useEffect(() => {
@@ -99,10 +104,11 @@ export default function Quiz() {
             }, 1000);
         }
 
-        return () => clearInterval(countdown);
+        return () => clearInterval(countdown); // To clear countdown var
 
     }, [currentQuestion, showScore]);
 
+    // _____________________________________________________
 
     const handleAnswerOptionClick = (isCorrect) => {
         if (isCorrect) {
@@ -111,6 +117,8 @@ export default function Quiz() {
 
         handleNextQuestion();
     };
+
+    // _____________________________________________________
 
     const handleNextQuestion = () => {
         const nextQuestion = currentQuestion + 1;
@@ -121,6 +129,8 @@ export default function Quiz() {
             setShowScore(true);
         }
     };
+
+    // _____________________________________________________
 
     return (
         <div className='wrapped-section' >
@@ -156,3 +166,5 @@ export default function Quiz() {
         </div>
     )
 }
+
+export default Quiz;

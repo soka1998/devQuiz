@@ -55,15 +55,13 @@ const StyledLinkPass = styled(Link)`
 `;
 // border: 3px solid #191919;
 //    box-shadow: 10px 10px #191919;
-// _______________________________________
+// _____________________________________________________
 
 const Header = () => {
    return (
       <NavContainer>
          <Link to="/">
             <HomeLogo src={LightLogo} />
-            {/* <HomeLogo src={devLogo} /> */}
-            {/* <HomeLogo src={dev} /> */}
          </Link>
          <div>
             <StyledLink to="/">

@@ -1,13 +1,13 @@
 import React from 'react'
-// Styled components: ___________________________
+// Styled components: __________________________________
 // Importing styled-components library:
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
-// ______________________________________________
+// _____________________________________________________
 // Importing Assets
 import HomeIllustration from '../assets/home-illustration.svg';
 
-// ______________________________________________
+// _____________________________________________________
 // HomeWrapper div:
 const HomeWrapper = styled.div`
    display: flex;
@@ -70,7 +70,8 @@ const StyledLink = styled(Link)`
     background-color: #F6F7C4;
    }
 `;
-// ______________________________________________
+// _____________________________________________________
+
 
 const Home = () => {
     return (

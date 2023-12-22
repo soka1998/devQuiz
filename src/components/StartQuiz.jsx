@@ -1,15 +1,16 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import Category from './Category';
-// import '../styles/StartQuiz.css'
 
-// Importing images
+// Importing images ____________________________________
 import backendImg from '../assets/backend.jpg';
 import frontendImg from '../assets/frontend.jpg';
 import fullstackImg from '../assets/fullstack.jpg';
 
+// _____________________________________________________
+
 // Importing styled-components library:
 import styled from 'styled-components';
+
 // _____________________________________________________
 
 // NavContainer nav:
@@ -22,11 +23,11 @@ const WrappedCat = styled.div`
     min-height: 100vh; 
 `;
 
-// export default function StartQuiz({ onStartQuiz }) {
-export default function StartQuiz() {
+// _____________________________________________________
 
-    // Example data
-    // const categories = ['Fullstack', 'Frontend', 'Backend'];
+const StartQuiz = ()=> {
+
+    // Categories
     const categories = [
         {
             title: 'Fullstack',
@@ -37,16 +38,17 @@ export default function StartQuiz() {
             title: 'Frontend',
             // description: 'Description for Frontend category.',
             image: frontendImg
-            
+
         },
         {
             title: 'Backend',
             // description: 'Description for Backend category.',
             image: backendImg
-            
+
         }
     ];
 
+    // _____________________________________________________
 
     return (
         <WrappedCat>
@@ -61,3 +63,5 @@ export default function StartQuiz() {
         </WrappedCat>
     );
 }
+
+export default StartQuiz;

@@ -1,4 +1,3 @@
-// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
@@ -44,10 +43,10 @@ const titleStyle = {
 //     paddingLeft: '10px',
     
 // }
+// _____________________________________________________
 
 const Category = ({ category }) => {
 
-    // const { title, description, image } = category;
     const { title, image } = category;
 
     return (
@@ -57,10 +56,6 @@ const Category = ({ category }) => {
                     <Card.Img variant="top" src={image} style={imageStyle} />
                     <Card.Body>
                         <Card.Title style={titleStyle} >{title}</Card.Title>
-                        {/* <Card.Text style={descStyle}>
-                            {description}
-                        </Card.Text> */}
-                        {/* <Button>Go</Button> */}
                     </Card.Body>
                 </Link>
             </Card>

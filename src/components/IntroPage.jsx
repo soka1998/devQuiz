@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
-// Styled components: ___________________________
+import {useNavigate} from 'react-router-dom' // Using useNavigate for redirect to another page
+// Styled components: _________________________________
 // Importing styled-components library:
 import styled from 'styled-components';
 
-// ______________________________________________
+// _____________________________________________________
+
 // HomeWrapper div:
 const IntroWrapper = styled.div`
    display: flex;
@@ -42,7 +43,8 @@ const styleInput = {
         fontFamily: "Verdana",
         color: '#191919'
 }
-// ______________________________________________
+
+// _____________________________________________________
 
 const IntroPage = () => {
 
@@ -55,7 +57,7 @@ const IntroPage = () => {
         job: '',
     });
 
-    // Function to handle input changes
+    // Func to handle input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -64,7 +66,7 @@ const IntroPage = () => {
         });
     };
 
-    // Function to handle form submission
+    // Func to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -78,7 +80,7 @@ const IntroPage = () => {
             job: '',
         });
 
-        // Navigate to the quiz page
+        // Navigate to the home page
     navigate('/home');
     };
 
