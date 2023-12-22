@@ -1,0 +1,169 @@
+.wrapped-section {
+  background-color: #7cc6fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.quiz-section {
+  background-color: #F6F7C4;
+  width: 700px;
+  min-height: 300px;
+  height: min-content;
+  border: 3px solid #191919;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 10px 10px #191919;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.score-section {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+}
+
+/* QUESTION/TIMER/LEFT SECTION */
+.question-section {
+  width: 100%;
+  position: relative;
+}
+
+.question-count {
+  margin-bottom: 20px;
+}
+
+.question-count span {
+  font-size: 28px;
+}
+
+.question-text {
+  margin-bottom: 12px;
+}
+
+.timer-text {
+  background: rgb(230, 153, 12);
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 5px solid rgb(255, 189, 67);
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ANSWERS/RIGHT SECTION */
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  width: 100%;
+  font-size: 16px;
+  color: #191919;
+  background-color: #7BD3EA;
+  /* border-radius: 15px; */
+  border-radius: 5px;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 5px solid #234668; */
+  border: 3px solid #191919;
+  cursor: pointer;
+  box-shadow: 5px 5px #191919;
+}
+
+.correct {
+  background-color: #2f922f;
+}
+
+.incorrect {
+  background-color: #ff3333;
+}
+
+button:hover {
+  background-color: #555e7d;
+}
+
+button:focus {
+  outline: none;
+}
+
+button svg {
+  margin-right: 5px;
+}
+
+/* progress bar timer  */
+/* progress {
+    width: 100%; /* Ajuste la largeur selon tes besoins 
+  } */
+
+/* progress {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+  }
+  
+  progress::-webkit-progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: #4caf50;
+    border-radius: 10px;
+  }
+  
+  progress::-moz-progress-bar {
+    background-color: #4caf50;
+    border-radius: 10px;
+  } */
+
+/* .progressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progressFill {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 5s ease; Contrôle de la durée et de la courbe d'animation 
+  } */
+
+progress {
+  width: 100%;
+  /* height: 20px; */
+  height: 10px;
+  appearance: none;
+  transition: width 0.5s ease;
+  /* Ajoute une transition smooth de 0.5 secondes à la propriété width */
+  border: 1px solid #191919;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+  /* background-color: #4caf50; */
+  background-color: #7BD3EA;
+  border-radius: 5px;
+}
+
+progress::-moz-progress-bar {
+  /* background-color: #4caf50; */
+  background-color: #7BD3EA;
+  border-radius: 5px;
+}
