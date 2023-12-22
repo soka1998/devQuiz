@@ -69,6 +69,11 @@ const IntroPage = () => {
     // Func to handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
+        // Validation but i have to upgrade it
+        if( formData.firstName === "" || formData.lastName === "" || formData.job === ""){
+            alert("Please, enter your informations!")
+            return;
+        }
 
         // Store data in localStorage
         localStorage.setItem('formData', JSON.stringify(formData));
@@ -81,7 +86,7 @@ const IntroPage = () => {
         });
 
         // Navigate to the home page
-    navigate('/home');
+    navigate('/intro/startquiz');
     };
 
     return (

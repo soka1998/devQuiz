@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .quiz-section {
@@ -17,12 +17,15 @@
   box-shadow: 10px 10px #191919;
   display: flex;
   justify-content: space-evenly;
+
 }
 
 .score-section {
   display: flex;
   font-size: 24px;
   align-items: center;
+  /* margin-top: -200px;
+  margin-bottom: -200px; */
 }
 
 /* QUESTION/TIMER/LEFT SECTION */

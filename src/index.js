@@ -23,9 +23,9 @@ root.render(
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<IntroPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/startquiz" element={<StartQuiz />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/intro" element={<IntroPage />} />
+        <Route path="/intro/startquiz" element={<StartQuiz />} />
         <Route path="/startquiz/quiz/:selectedCategory" element={<Quiz />} />
       </Routes>
       <Footer />

@@ -21,7 +21,7 @@ const HomeWrapper = styled.div`
 // HomeContainer div:
 const HomeContainer = styled.div`
    background-color: #F6F7C4;
-   margin: 45px 30px 30px 30px;
+   margin: 55px 30px 30px 30px;
    padding: 60px 90px;
    display: flex;
    flex-direction: row;
@@ -84,7 +84,7 @@ const Home = () => {
                     <StyledTitle>
                         Assess your development skills with our technical quiz.
                     </StyledTitle>
-                    <StyledLink to="/startquiz">
+                    <StyledLink to="/intro">
                         Pass the test
                     </StyledLink>
                 </LeftCol>

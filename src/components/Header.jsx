@@ -1,5 +1,5 @@
 // Importing logo
-import LightLogo from '../assets/logoInit.png';
+import LightLogo from '../assets/logo.png';
 // _____________________________________________________
 // Importing Link from React router dom library:
 import { Link } from 'react-router-dom';
@@ -70,7 +70,7 @@ const Header = () => {
             <StyledLink to="/">
                Profil
             </StyledLink>
-            <StyledLinkPass to="/startquiz">
+            <StyledLinkPass to="/intro">
                Pass the test
             </StyledLinkPass>
          </div>
