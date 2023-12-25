@@ -67,8 +67,8 @@ const Header = () => {
             <StyledLink to="/">
                Home
             </StyledLink>
-            <StyledLink to="/">
-               Profil
+            <StyledLink to="/profile">
+               Profile
             </StyledLink>
             <StyledLinkPass to="/intro">
                Pass the test

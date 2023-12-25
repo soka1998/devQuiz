@@ -66,7 +66,7 @@ const Quiz = () => {
     // _____________________________________________________
 
     // const allTimeLimit = 10 * 60 // 10 min
-    const questionTimeLimit = 59 // 5 secs
+    const questionTimeLimit = 59 // by secs
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
@@ -90,27 +90,30 @@ const Quiz = () => {
 
     // To rerender component
     useEffect(() => {
-        let countdown;
+        let countdown; // Variable to hold the interval reference
 
+        // Check if there are more questions and the final score is not shown
         if (currentQuestion < questions.length && !showScore) {
             countdown = setInterval(() => {
+                // Update timer state based on the previous state
                 setTimer((prevTimer) => {
                     const newProgress = (prevTimer / questionTimeLimit) * 100;
                     setTimerProgress(newProgress);
 
+                    // If timer reaches zero, move to the next question
                     if (prevTimer <= 0) {
                         handleNextQuestion();
-                        return questionTimeLimit;
+                        return questionTimeLimit; // Reset timer to initial limit
                     } else {
-                        return prevTimer - 1;
+                        return prevTimer - 1; // Decrease timer by 1 second
                     }
                 });
-            }, 1000);
+            }, 1000); // Run every 1000 milliseconds (1 second)
         }
 
         return () => clearInterval(countdown); // To clear countdown var
 
-    }, [currentQuestion, showScore]);
+    }, [currentQuestion, showScore]); // Run this effect when currentQuestion or showScore changes
 
     // _____________________________________________________
 

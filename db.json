@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "firstName": "Youness",
+      "email": "ynsjns@hootook.co",
+      "job": "Full stack Js",
+      "id": 1
+    },
+    {
+      "firstName": "Hamza",
+      "email": "hamza@gmail.com",
+      "job": "Sap partner",
+      "id": 2
+    }
+  ]
+}

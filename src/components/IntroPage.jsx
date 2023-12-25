@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom' // Using useNavigate for redirect to another page
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom' // Using useNavigate for redirect to another page
 // Styled components: _________________________________
 // Importing styled-components library:
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 // _____________________________________________________
 
 // HomeWrapper div:
 const IntroWrapper = styled.div`
-   display: flex;
-   justify-content: center;
-   background-color: #7cc6fe;
-   margin: 0;
-   min-height: 100vh;
-   font-family: "Verdana", cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: #7cc6fe;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Verdana, cursive, sans-serif;
     color: #191919;
 
 `;
 
 const FormWrapper = styled.div`
     background-color: #F6F7C4;
-    margin: 45px 30px 30px 30px;
+    margin: 60px 30px 30px 30px;
     padding: 60px 90px;
     display: flex;
     flex-direction: row;
-    max-width: 1200px;
+    max-width: 500px;
     max-height: 400px;
     border-radius: 15px;
     border: 3px solid #191919;
@@ -32,17 +32,60 @@ const FormWrapper = styled.div`
 
 `;
 
-const styleInput = {
-        width: '100%',
-        padding: '12px 20px',
-        margin: '8px 0',
-        display: 'inlineBlock',
-        border: '1px solid #ccc',
-        borderRadius: '4px',
-        boxSizing: 'borderBox',
-        fontFamily: "Verdana",
-        color: '#191919'
-}
+const LabelTitle = styled.label`
+    color: #191919;
+    font-weight: 300;   
+`;
+
+const Input = styled.input`
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #191919;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Verdana;
+    color: #191919;
+`;
+
+const Button = styled.button`
+    width: 50%;
+    padding: 10px 15px;
+    margin-top: 25px;
+    color: #191919;
+    border: 3px solid #191919;
+    box-shadow: 5px 5px #191919;
+    border-radius: 5px;  // Fix the typo here
+    font-size: 18px;
+    text-align: center;
+    background-color: #7cc6fe;
+    display: flex;  /* Added flex container */
+    align-items: center;  /* Center items vertically */
+    justify-content: center;  /* Center items horizontally */
+    &:hover {
+        background-color: #F6F7C4;
+    }
+`;
+
+// Create the keyframes:
+const rotate = keyframes`
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+`;
+
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+    display: inline-block;
+    animation: ${rotate} 2s linear infinite;
+    padding: 2rem 1rem;
+    font-size: 1.2rem;
+`;
 
 // _____________________________________________________
 
@@ -53,7 +96,7 @@ const IntroPage = () => {
     // State to manage form data
     const [formData, setFormData] = useState({
         firstName: '',
-        lastName: '',
+        email: '',
         job: '',
     });
 
@@ -66,11 +109,12 @@ const IntroPage = () => {
         });
     };
 
-    // Func to handle form submission
-    const handleSubmit = (e) => {
+    // Func to handle form submission and store user
+    const handleSubmit = async (e) => {
+
         e.preventDefault();
         // Validation but i have to upgrade it
-        if( formData.firstName === "" || formData.lastName === "" || formData.job === ""){
+        if (formData.firstName === "" || formData.email === "" || formData.job === "") {
             alert("Please, enter your informations!")
             return;
         }
@@ -78,55 +122,79 @@ const IntroPage = () => {
         // Store data in localStorage
         localStorage.setItem('formData', JSON.stringify(formData));
 
+        // ___________________________________________________________ 
+        // POST request to json-server to add a new user
+        const response = await fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+            console.log('User added successfully!')
+        } else {
+            console.error('Failed to add user');
+        }
+        // ___________________________________________________________ 
+
         // Clear form data
         setFormData({
             firstName: '',
-            lastName: '',
+            email: '',
             job: '',
         });
 
         // Navigate to the home page
-    navigate('/intro/startquiz');
+        navigate('/intro/startquiz');
     };
 
     return (
         <IntroWrapper>
             <FormWrapper>
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        First Name:
-                        <input
-                            style={styleInput}
+                    <LabelTitle>
+                        Your Name:
+                        <Input
+                            // style={styleInput}
                             type="text"
                             name="firstName"
+                            placeholder='Enter your first name'
                             value={formData.firstName}
                             onChange={handleInputChange}
                         />
-                    </label>
-                    <br />
-                    <label>
-                        Last Name:
-                        <input
-                            style={styleInput}
-                            type="text"
-                            name="lastName"
-                            value={formData.lastName}
+                    </LabelTitle>
+
+                    <LabelTitle>
+                        Email:
+                        <Input
+                            // style={styleInput}
+                            type="email"
+                            name="email"
+                            placeholder='your.name@example.com'
+                            value={formData.email}
                             onChange={handleInputChange}
                         />
-                    </label>
-                    <br />
-                    <label>
+                    </LabelTitle>
+
+                    <LabelTitle>
                         Job:
-                        <input
-                            style={styleInput}
+                        <Input
+                            // style={styleInput}
                             type="text"
                             name="job"
+                            placeholder='Enter your job'
                             value={formData.job}
                             onChange={handleInputChange}
                         />
-                    </label>
-                    <br />
-                    <button type="submit">Submit</button>
+                    </LabelTitle>
+                    <center>
+                        <Button type="submit">Submit</Button>
+                        <br />
+                        <Rotate>&lt; 💅🏾 &gt;</Rotate>
+                    </center>
+
                 </form>
             </FormWrapper>
         </IntroWrapper>

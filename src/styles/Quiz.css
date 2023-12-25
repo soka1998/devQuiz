@@ -24,8 +24,6 @@
   display: flex;
   font-size: 24px;
   align-items: center;
-  /* margin-top: -200px;
-  margin-bottom: -200px; */
 }
 
 /* QUESTION/TIMER/LEFT SECTION */
@@ -90,7 +88,7 @@ button {
 }
 
 button:hover {
-  background-color: #555e7d;
+  background-color: #3887BE;
 }
 
 button:focus {

@@ -1,4 +1,3 @@
-import React from 'react'
 // Styled components: __________________________________
 // Importing styled-components library:
 import styled from 'styled-components';
@@ -70,13 +69,13 @@ const StyledLink = styled(Link)`
     background-color: #F6F7C4;
    }
 `;
-// _____________________________________________________
 
 
-const Home = () => {
+const Home = () => { 
+
     return (
         // div 
-        <HomeWrapper> 
+        <HomeWrapper>
             {/* div  */}
             <HomeContainer>
                 {/* div  */}
