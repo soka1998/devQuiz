@@ -54,7 +54,7 @@ const StyledLinkPass = styled(Link)`
  }
 `;
 // border: 3px solid #191919;
-//    box-shadow: 10px 10px #191919;
+// box-shadow: 10px 10px #191919;
 // _____________________________________________________
 
 const Header = () => {
@@ -70,7 +70,7 @@ const Header = () => {
             <StyledLink to="/profile">
                Profile
             </StyledLink>
-            <StyledLinkPass to="/intro">
+            <StyledLinkPass to="/form">
                Pass the test
             </StyledLinkPass>
          </div>

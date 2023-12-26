@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Importing Components:
 import Header from './Header';
 import Home from './Home';
-import IntroPage from './IntroPage';
+import FormQuiz from './FormQuiz';
 import StartQuiz from './StartQuiz';
 import Quiz from './Quiz';
 import NotFound from './NotFound';
@@ -14,16 +14,11 @@ import Footer from './Footer';
 import Profile from './Profile';
 
 const App = () => {
-    // _____________________________________________________
-
-    // const data = localStorage.getItem("formData")
-    // if (data) {
-    //         console.log(data)
-    // }
     // _____________________________________________________  
     // To store profiles
     const [profiles, setProfiles] = useState([]);
-    // Todod => Fetch all profiles from (json-server) db.json file
+
+    // Todod : Fetch all profiles from (json-server) db.json file
     const fetchProfiles = () => {
         fetch('http://localhost:5000/users')
             .then(response => response.json())
@@ -34,13 +29,14 @@ const App = () => {
             .catch(error => console.error('Error: Something went wrong!'));
     }
 
+    // _____________________________________________________  
+
     useEffect(() => {
 
         fetchProfiles();
     }, [])
 
-    console.log('Data from useState', profiles)
-
+    // console.log('Data from useState', profiles)
     // _____________________________________________________ 
 
     return (
@@ -49,9 +45,9 @@ const App = () => {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/intro" element={<IntroPage />} />
+                    <Route path="/form" element={<FormQuiz />} />
                     <Route path="/profile" element={<Profile profiles={profiles} />} />
-                    <Route path="/intro/startquiz" element={<StartQuiz />} />
+                    <Route path="/form/startquiz" element={<StartQuiz />} />
                     <Route path="/startquiz/quiz/:selectedCategory" element={<Quiz />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
@@ -61,4 +57,4 @@ const App = () => {
     )
 }
 
-export default App
+export default App;

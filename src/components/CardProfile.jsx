@@ -1,9 +1,8 @@
-import React from 'react'
 // Styled components: __________________________________
-// Importing styled-components library
 import styled from 'styled-components';
+// _____________________________________________________  
 // Label:
-const CardLabel = styled.span`
+const CardInfo = styled.span`
    color: #191919;
    font-size: 22px;
    font-weight: normal;
@@ -12,7 +11,7 @@ const CardLabel = styled.span`
 `;
 
 // Title span:
-const CardTitle = styled.span`
+const CardName = styled.span`
    color: #191919;
    font-size: 22px;
    font-weight: normal;
@@ -36,27 +35,24 @@ const CardWrapper = styled.div`
 `;
 // _____________________________________________________
 
-// Definition of the Card component: ___________________
+const CardProfile = ({ profile }) => {
 
-
-const Card = ({ profile }) => {
-
-   // Destructring:
+   // Destructring: profile object
    const { firstName, email, job } = profile;
 
    return (
       <CardWrapper>
-         <CardTitle>
+         <CardName>
             {firstName}
-         </CardTitle>
-         <CardLabel>
+         </CardName>
+         <CardInfo>
             {job}
-         </CardLabel>
-         <CardLabel>
+         </CardInfo>
+         <CardInfo>
             {email}
-         </CardLabel>
+         </CardInfo>
       </CardWrapper>
    )
 }
 
-export default Card
+export default CardProfile

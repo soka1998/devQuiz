@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom' // Using useNavigate for redirect to another page
+// Using useNavigate for redirect to another page
+import { useNavigate } from 'react-router-dom' 
 // Styled components: _________________________________
 // Importing styled-components library:
 import styled, { keyframes } from 'styled-components';
@@ -68,6 +69,7 @@ const Button = styled.button`
     }
 `;
 
+// _____________________________________________________  
 // Create the keyframes:
 const rotate = keyframes`
     from{
@@ -89,18 +91,19 @@ const Rotate = styled.div`
 
 // _____________________________________________________
 
-const IntroPage = () => {
+const FormQuiz = () => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Using useNavigate for redirect to another page
 
+    // _____________________________________________________  
     // State to manage form data
     const [formData, setFormData] = useState({
         firstName: '',
         email: '',
         job: '',
     });
-
-    // Func to handle input changes
+    // _____________________________________________________
+    // Function to handle input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -108,8 +111,8 @@ const IntroPage = () => {
             [name]: value,
         });
     };
-
-    // Func to handle form submission and store user
+    // _____________________________________________________
+    // Function to handle form submission and store user
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -122,7 +125,7 @@ const IntroPage = () => {
         // Store data in localStorage
         localStorage.setItem('formData', JSON.stringify(formData));
 
-        // ___________________________________________________________ 
+        // ---------------------------------------------
         // POST request to json-server to add a new user
         const response = await fetch('http://localhost:5000/users', {
             method: 'POST',
@@ -137,7 +140,8 @@ const IntroPage = () => {
         } else {
             console.error('Failed to add user');
         }
-        // ___________________________________________________________ 
+
+        // ---------------------------------------------
 
         // Clear form data
         setFormData({
@@ -146,8 +150,9 @@ const IntroPage = () => {
             job: '',
         });
 
+        // ---------------------------------------------
         // Navigate to the home page
-        navigate('/intro/startquiz');
+        navigate('/form/startquiz');
     };
 
     return (
@@ -202,4 +207,4 @@ const IntroPage = () => {
     );
 };
 
-export default IntroPage;
+export default FormQuiz;

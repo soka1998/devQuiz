@@ -1,9 +1,10 @@
 // Styled components: __________________________________
 // Importing styled-components library:
 import styled from 'styled-components';
+// Importing Link from React router dom library:
 import { Link } from 'react-router-dom'
 // _____________________________________________________
-// Importing Assets
+// Importing from Assets image
 import HomeIllustration from '../assets/home-illustration.svg';
 
 // _____________________________________________________
@@ -70,20 +71,18 @@ const StyledLink = styled(Link)`
    }
 `;
 
+// _____________________________________________________  
 
 const Home = () => { 
 
     return (
-        // div 
         <HomeWrapper>
-            {/* div  */}
             <HomeContainer>
-                {/* div  */}
                 <LeftCol>
                     <StyledTitle>
                         Assess your development skills with our technical quiz.
                     </StyledTitle>
-                    <StyledLink to="/intro">
+                    <StyledLink to="/form">
                         Pass the test
                     </StyledLink>
                 </LeftCol>

@@ -1,6 +1,6 @@
 // Importing styled-components for styling
 import styled from 'styled-components';
-import Card from './Card';
+import CardProfile from './CardProfile';
 
 // Defining styled components:
 // CardsContainer div:
@@ -38,9 +38,9 @@ const PageSubtitle = styled.h2`
 
 const Profile = ({ profiles }) => {
 
-   if (profiles) {
-      console.log(profiles)
-   }
+   // if (profiles) {
+   //    console.log(profiles)
+   // }
 
    return (
       <div>
@@ -51,7 +51,7 @@ const Profile = ({ profiles }) => {
          <CardsContainer>
             {
                profiles && profiles.map((profile, index) => (
-                  <Card key={index} profile={profile} />
+                  <CardProfile key={index} profile={profile} />
                ))
             }
          </CardsContainer>

@@ -1,11 +1,11 @@
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // ..
 
 // Importing styled-components library:
 import styled from 'styled-components';
 // _____________________________________________________
 
-// NavContainer nav:
+// WrappedCatItem div:
 const WrappedCatItem = styled.div`
     background-color: #F6F7C4;
     height: 350px; 
@@ -47,6 +47,7 @@ const titleStyle = {
 
 const Category = ({ category }) => {
 
+    // Destructring category object
     const { title, image } = category;
 
     return (

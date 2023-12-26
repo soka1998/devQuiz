@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+// Importing style
 import '../styles/Quiz.css'
+// Importing data from data folder
 import { quizFullStackData, quizFrontendData, quizBackendData } from '../data/data'
+// Using or importing useParams from react-router-dom library 
 import { useParams } from 'react-router-dom';
+// Importing Timer component
 import Timer from './Timer';
 
 // _____________________________________________________
@@ -39,20 +43,19 @@ const Quiz = () => {
 
     // Retrieve the stored JSON string from localStorage
     const userDataString = localStorage.getItem('formData');
-
+    // _____________________________________________________
     // Check if the data exists in localStorage
     // if (userDataString) {
     // Convert the JSON string to a JavaScript object
     const userData = JSON.parse(userDataString);
-
+    // _____________________________________________________
     // Access and log the first name
     const firstName = userData.firstName;
     // console.log(firstName);
     // } else {
     // console.log('No user data found in localStorage :(');
     // }
-
-
+    // _____________________________________________________
 
     // To get the category selected from URL Params
     const { selectedCategory } = useParams();
@@ -116,7 +119,7 @@ const Quiz = () => {
     }, [currentQuestion, showScore]); // Run this effect when currentQuestion or showScore changes
 
     // _____________________________________________________
-
+    
     const handleAnswerOptionClick = (isCorrect) => {
         if (isCorrect) {
             setScore(score + 1);
@@ -156,9 +159,6 @@ const Quiz = () => {
                                             <span>Question {currentQuestion + 1}</span>/{questions.length}
                                         </div>
                                         <div className='question-text'>{questions[currentQuestion].questionText}</div>
-                                        {/* <div className='question-count timer'>
-                                        <span>Timer {allTimer}</span>
-                                    </div> */}
                                     </div>
                                     <div className='answer-section'>
                                         <div className='timer'>
@@ -175,6 +175,7 @@ const Quiz = () => {
                 }
 
             </div>
+            {/* Using Timer component  */}
             <Timer />
         </>
 

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // Importing styled-components library:
 import styled from 'styled-components';
 // _____________________________________________________
 
-// NavContainer nav:
+// WrappedTimer div:
 const WrappedTimer = styled.div`
    padding: 8px;
    display: flex;
@@ -13,7 +13,7 @@ const WrappedTimer = styled.div`
    background-color: #7cc6fe;
    min-height: 10vh;
 `;
-
+// _____________________________________________________
 const StyledTimer = styled.span`
    margin-right: 15px;
    padding: 5px;
@@ -27,10 +27,14 @@ const StyledTimer = styled.span`
       background-color: #7cc6fe;
  }
 `;
+// _____________________________________________________
 
 const Timer = () => {
+
   const initialTime = 10 * 60; // 10 minutes in seconds
   const [time, setTime] = useState(initialTime);
+
+// _____________________________________________________
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,11 +45,15 @@ const Timer = () => {
     return () => clearInterval(timer);
   }, []);
 
+// _____________________________________________________
+
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
+
+// _____________________________________________________
 
   return (
     <WrappedTimer>

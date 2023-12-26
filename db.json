@@ -11,6 +11,24 @@
       "email": "hamza@gmail.com",
       "job": "Sap partner",
       "id": 2
+    },
+    {
+      "firstName": "Soukaina",
+      "email": "souk@gmail.com",
+      "job": "Frontend",
+      "id": 3
+    },
+    {
+      "firstName": "Mohamed",
+      "email": "mohamed@gmail.com",
+      "job": "Data analyst",
+      "id": 4
+    },
+    {
+      "firstName": "test",
+      "email": "test@test",
+      "job": "Java",
+      "id": 5
     }
   ]
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+// Importing Category component
 import Category from './Category';
 
 // Importing images ____________________________________
@@ -13,8 +13,8 @@ import styled from 'styled-components';
 
 // _____________________________________________________
 
-// NavContainer nav:
-const WrappedCat = styled.div`
+// WrappedCategory div:
+const WrappedCategory = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ const WrappedCat = styled.div`
 
 const StartQuiz = ()=> {
 
-    // Categories
+    // Categories object
     const categories = [
         {
             title: 'Fullstack',
@@ -51,16 +51,11 @@ const StartQuiz = ()=> {
     // _____________________________________________________
 
     return (
-        <WrappedCat>
+        <WrappedCategory>
             {categories.map((category, index) => (
                 <Category key={index} category={category} />
             ))}
-            {/* <p>Selected Category: {selectedCategory}</p> */}
-
-            {/* <Link to={`/startquiz/quiz/${selectedCategory}`} >
-                <button>Start Quiz</button>
-            </Link> */}
-        </WrappedCat>
+        </WrappedCategory>
     );
 }
 
