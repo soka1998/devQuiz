@@ -105,10 +105,12 @@ const FormQuiz = () => {
     // _____________________________________________________
     // Function to handle input changes
     const handleInputChange = (e) => {
+        // Extracting 'name' and 'value' from the input event
         const { name, value } = e.target;
+        // Updating the form data using the spread operator
         setFormData({
-            ...formData,
-            [name]: value,
+            ...formData,    // Copy the existing form data
+            [name]: value,  // Update the property with the new value
         });
     };
     // _____________________________________________________
