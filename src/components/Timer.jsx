@@ -48,9 +48,9 @@ const Timer = () => {
 // _____________________________________________________
 
   const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    const minutes = Math.floor(seconds / 60); // To Extract minutes
+    const remainingSeconds = seconds % 60;    // To Extract seconds
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`; // Add zeros in front of seconds if less than 10 / in french: Ajout de zéros devant les secondes si elles sont inférieures à 10
   };
 
 // _____________________________________________________

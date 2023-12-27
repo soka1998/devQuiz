@@ -68,7 +68,7 @@ const Quiz = () => {
 
     // _____________________________________________________
 
-    // const allTimeLimit = 10 * 60 // 10 min
+    // Global variables
     const questionTimeLimit = 59 // by secs
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -100,8 +100,13 @@ const Quiz = () => {
             countdown = setInterval(() => {
                 // Update timer state based on the previous state
                 setTimer((prevTimer) => {
-                    const newProgress = (prevTimer / questionTimeLimit) * 100;
+                    // const newProgress = (prevTimer / questionTimeLimit) * 100;
+                    // setTimerProgress(newProgress);
+
+                    const newProgress = Math.floor((prevTimer / questionTimeLimit) * 100);
+                    // console.log(newProgress)
                     setTimerProgress(newProgress);
+
 
                     // If timer reaches zero, move to the next question
                     if (prevTimer <= 0) {
@@ -118,13 +123,16 @@ const Quiz = () => {
 
     }, [currentQuestion, showScore]); // Run this effect when currentQuestion or showScore changes
 
+    // console.log('outside countDown : ', timerProgress)
+
     // _____________________________________________________
-    
+
     const handleAnswerOptionClick = (isCorrect) => {
+        // add 1 to score if correct question clicked
         if (isCorrect) {
             setScore(score + 1);
         }
-
+        // else go to the next question
         handleNextQuestion();
     };
 
