@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+Online Quiz - Technical Skills Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project is a web application for conducting online tests to assess the technical proficiency of candidates or developers. The results can be shared with companies for a more in-depth evaluation.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Online test-taking
+- Automatic assessment of responses
+- Storage of results
+- User-friendly interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure you have the following installed on your local machine:
 
-### `npm test`
+- Node.js
+- npm (Node.js package manager)
+- json-server (for simulating an API server with data)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
+This project relies on the following dependencies:
 
-### `npm run build`
+react-router-dom - For navigating within the application.
+react-bootstrap - For using Bootstrap components in React.
+styled-components - For styling React components.
+json-server - For simulating an API server with data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone this repository to your local machine.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/soka1998/devQuiz.git
+cd devQuiz
+ ```
 
-### `npm run eject`
+2. **Install project dependencies.**
+```bash
+npm install
+ ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Install JSON Server**
+```bash
+npm install -g json-server
+ ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Create a db.json file**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Add server to scripts in package.json**
+```bash
+"scripts": {
+    ...
+    "server": "json-server --watch db.json --port 5000"}
+ ```
 
-## Learn More
+6. **Start the server**
+ ```bash
+npm run server
+ ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+7. **Launch the React application.**
+```bash
+npm start
+ ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**The application will be accessible at http://localhost:3000/.**
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author
+ [AIT M'BAREK Youness](https://github.com/YNS-JNS).
+ [Soukain HARIFI](https://github.com/soka1998).
 
-### Analyzing the Bundle Size
+ ## Learn More
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- React.js Documentation: [https://react.dev/](https://react.dev/)
 
-### Making a Progressive Web App
+## Contribution
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you find issues or want to contribute, follow these steps:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the project.
+2. Create a branch for your feature: `git checkout -b feature/NewFeature`.
+3. Commit your changes: `git commit -m "Add New Feature"`.
+4. Push to the branch: `git push origin feature/NewFeature`.
+5. Open a pull request.
